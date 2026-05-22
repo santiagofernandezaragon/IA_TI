@@ -9,10 +9,9 @@
 
 \title{\textbf{Trabajo de Innovación - IA\\Spotify DJ}}
 
-\author{Roger Garcia\\Iago Fernandez\\Bernat Llorens}
+\author{Roger Garcia\\Santiago Fernandez\\Bernat Llorens}
 
 \begin{document}
-
 
 \maketitle
 
@@ -26,30 +25,45 @@
 En la actualidad, si piensas en una aplicación de música, piensas en Spotify, y el producto que analizaremos será de esta plataforma de reproducción de música.\\
 El producto que analizaremos es Spotify DJ, una funcionalidad pionera introducida por Spotify que actúa como un guía musical personalizado guiado por inteligencia artificial. A diferencia de las tradicionales listas de reproducción, esta característica no solo selecciona y reproduce música adaptada a los gustos específicos de cada usuario, sino que intercala comentarios hablados dinámicos sobre las canciones, los artistas y los diferentes géneros musicales, emulando la figura clásica del locutor de radio.
 
-La innovación concreta en la que se centra este trabajo es la integración sinérgica de modelos generativos de lenguaje (LLMs) y síntesis de voz fotorrealista en tiempo real, combinada con la infraestructura de los sistemas de recomendación que Spotify ya poseía. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TI-1.png}
+    \caption{Interfaz de usuario promocional de la funcionalidad Spotify DJ.}
+    \label{fig:spotify_dj}
+\end{figure}
 
-Es fundamental destacar de acuerdo con los paradigmas de desarrollo tecnológico que la naturaleza de esta funcionalidad constituye un uso innovador de técnicas y métodos de IA ya existentes. La disrupción de Spotify DJ no radica en la invención de un nuevo algoritmo subyacente, sino en la convergencia orquestada de estos tres pilares. Resolver el tremendo reto de ingeniería y latencia que supone generar un guion personalizado con un LLM y procesarlo mediante \textit{Text-to-Speech} (TTS) en escasos milisegundos, garantizando una transición fluida y sin pausas perceptibles entre canciones, constituye el núcleo técnico de su propuesta de valor. Esta convergencia permite crear una experiencia de escucha continua, guiada y fuertemente narrativa, algo inédito en las plataformas de streaming musical modernas.
+La innovación concreta en la que se centra este trabajo es la \textbf{integración sinérgica de modelos generativos de lenguaje (LLMs) y síntesis de voz fotorrealista en tiempo real}, combinada con la infraestructura de los sistemas de recomendación que Spotify ya poseía. 
+
+Es fundamental destacar de acuerdo con los paradigmas de desarrollo tecnológico que la naturaleza de esta funcionalidad constituye un \textbf{uso innovador de técnicas y métodos de IA ya existentes}. La disrupción de Spotify DJ no radica en la invención de un nuevo algoritmo subyacente, sino en la convergencia orquestada de estos tres pilares. Resolver el tremendo reto de ingeniería y latencia que supone generar un guion personalizado con un LLM y procesarlo mediante \textit{Text-to-Speech} (TTS) en escasos milisegundos, garantizando una transición fluida y sin pausas perceptibles entre canciones, constituye el núcleo técnico de su propuesta de valor. Esta convergencia permite crear una experiencia de escucha continua, guiada y fuertemente narrativa, algo inédito en las plataformas de streaming musical modernas.
 
 \section{Descripción general de las técnicas de IA utilizadas}
 Para lograr esta innovación, Spotify ha orquestado una combinación de tres técnicas principales dentro del campo de la Inteligencia Artificial:
 
 \begin{itemize}
     \item \textbf{Sistemas de Recomendación (Machine Learning):} Basados en arquitecturas de filtrado colaborativo (que han analizado las similitudes entre los comportamientos de millones de usuarios), análisis de contenido de audio crudo (para entender propiedades acústicas) y procesamiento de lenguaje natural (NLP) aplicado a listas de reproducción. Estas técnicas analizan variables de comportamiento y metadatos musicales para determinar \textit{qué} canciones van a reproducirse de forma personalizada.
+    
     \item \textbf{Inteligencia Artificial Generativa (LLMs):} Spotify utiliza modelos de lenguaje de gran tamaño (proporcionados gracias a su colaboración estratégica con OpenAI) que han sido capacitados para generar textos estructurados, contextualmente relevantes y con un tono de voz específico. Para su aplicación comercial masiva, estos modelos incorporan capas de alineación de la IA (\textit{AI Alignment}) y barreras de seguridad (\textit{guardrails}) estrictas, asegurando que los guiones generados eviten sesgos ofensivos y mantengan la identidad corporativa de la empresa.
+    
     \item \textbf{Síntesis de Voz Dinámica y Generativa (Text-to-Speech avanzado):} Tecnología puntera de clonación y generación de voz adquirida mediante la compra de la startup \textit{Sonantic}. Esta IA permite generar un discurso de audio altamente realista, con inflexiones expresivas que transmiten emoción, pausas naturales y variaciones tonales. El avance técnico crucial aquí radica en la capacidad del modelo para interpretar el contexto semántico del texto, permitiendo que la voz replique la prosodia y la calidez de un locutor humano en lugar de una lectura robótica.
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TI-2.png}
+    \caption{Ejemplo de arquitectura de Filtrado Colaborativo mediante la vectorización de usuarios y canciones.}
+    \label{fig:collab_filtering}
+\end{figure}
 
 \section{Descripción de cómo han sido utilizadas/adaptadas las técnicas para la innovación}
 La innovación de Spotify DJ reside en el cauce (\textit{pipeline}) que conecta y adapta estas tecnologías para que actúen en tiempo real de forma interdependiente.
 
 En primer lugar, el sistema de recomendación no genera una lista estática, sino que analiza metadatos avanzados (como el ritmo o BPM, los géneros musicales y el \textit{mood} o estado de ánimo de los temas habituales del usuario) para estructurar las canciones en ``bloques'' temáticos en tiempo real (por ejemplo, ``tus descubrimientos de 2018'' o ``novedades de indie pop'').
 
-Una vez definidos los bloques, entran en juego los LLMs . La adaptación de estos modelos no se limita a una generación libre de texto, sino que sigue una arquitectura inspirada en los sistemas de generación aumentada por recuperación (\textit{Retrieval-Augmented Generation} o RAG). El sistema inyecta datos curados dinámicamente por los equipos editoriales (expertos musicales humanos que documentan anécdotas o datos relevantes sobre artistas) y los cruza con el historial específico de escucha del usuario. El LLM es adaptado mediante \textit{prompt engineering} sistemático y \textit{fine-tuning} para redactar, en milisegundos, un guion corto que introduce el bloque musical. Esta inyección estricta de contexto actúa como un filtro que reduce drásticamente el riesgo de invención de datos falsos (\textit{alucinaciones}) por parte del modelo.
+Una vez definidos los bloques, entran en juego los LLMs. La adaptación de estos modelos no se limita a una generación libre de texto, sino que sigue una arquitectura inspirada en los sistemas de generación aumentada por recuperación (\textit{Retrieval-Augmented Generation} o RAG). El sistema inyecta datos curados dinámicamente por los equipos editoriales (expertos musicales humanos que documentan anécdotas o datos relevantes sobre artistas) y los cruza con el historial específico de escucha del usuario. El LLM es adaptado mediante \textit{prompt engineering} sistemático y \textit{fine-tuning} para redactar, en milisegundos, un guion corto que introduce el bloque musical. Esta inyección estricta de contexto actúa como un filtro que reduce drásticamente el riesgo de invención de datos falsos (\textit{alucinaciones}) por parte del modelo.
 
-Finalmente, este guion de texto es enviado al motor de síntesis de voz (Sonantic) . La IA de voz recibe el texto y parametriza el audio para generar un corte de voz realista. Todo el proceso ocurre de manera asíncrona pero sin interrupciones perceptibles por el usuario, integrando de forma fluida el audio hablado entre las canciones.
+Finalmente, este guion de texto es enviado al motor de síntesis de voz (Sonantic). La IA de voz —entrenada con miles de horas de grabaciones del directivo de Spotify Xavier ``X'' Jernigan— recibe el texto y parametriza el audio para generar un corte de voz realista. Todo el proceso ocurre de manera asíncrona pero sin interrupciones perceptibles por el usuario, integrando de forma fluida el audio hablado entre las canciones.
 
 \section{Por qué es un producto/servicio innovador y la naturaleza de la innovación}
-
 La naturaleza de esta funcionalidad constituye, desde el punto de vista tecnológico y de mercado, un \textbf{uso innovador de técnicas y métodos de IA ya existentes}. Como se ha detallado anteriormente, las IA generativas (LLMs), los motores de síntesis de voz (TTS) y los sistemas de recomendación ya existían y operaban de manera aislada; lo verdaderamente innovador es su orquestación conjunta.
 
 El carácter innovador de Spotify DJ se puede dividir en dos vertientes principales:
@@ -61,22 +75,35 @@ El carácter innovador de Spotify DJ se puede dividir en dos vertientes principa
 \end{itemize}
 
 En definitiva, la naturaleza de esta innovación radica en cerrar la brecha histórica existente entre la minuciosa curación humana (propia de la radio tradicional) y la fría pero eficiente personalización automatizada de la era digital, logrando escalar una experiencia de locutor de radio "1-a-1" a millones de usuarios de forma simultánea.
-\section{Por qué es un producto/servicio innovador y la naturaleza de la innovación}
 
-La naturaleza de esta funcionalidad constituye, desde el punto de vista tecnológico y de mercado, un \textbf{uso innovador de técnicas y métodos de IA ya existentes}. Como se ha detallado anteriormente, las IA generativas (LLMs), los motores de síntesis de voz (TTS) y los sistemas de recomendación ya existían y operaban de manera aislada; lo verdaderamente innovador es su orquestación conjunta.
-
-El carácter innovador de Spotify DJ se puede dividir en dos vertientes principales:
+\section{Impacto de la innovación en la empresa}
+El despliegue de Spotify DJ genera una serie de efectos estratégicos para la compañía, equilibrando oportunidades de crecimiento masivo con desafíos operativos y regulatorios considerables:
 
 \begin{itemize}
-    \item \textbf{Innovación Arquitectónica y de Orquestación:} Lo novedoso es su combinación ininterrumpida y en tiempo real a escala global enfocada al consumidor final. Lograr que tres modelos de IA distintos se comuniquen en milisegundos para generar una salida de audio continua e impecable es un hito de ingeniería que redefine los estándares de la industria del \textit{streaming}.
+    \item \textbf{Beneficios y Posición en el Mercado:} 
+    \begin{itemize}
+        \item \textbf{Aumento de la retención y el \textit{engagement}:} Esta funcionalidad expande dramáticamente el tiempo de sesión pasiva y activa de los usuarios dentro de la aplicación. Supone un sólido valor añadido para los suscriptores Premium, estableciendo una ventaja competitiva masiva frente a competidores directos (como Apple Music o Amazon Music) que carecen de estas interacciones algorítmicas mediante voz.
+        \item \textbf{Efecto volante de datos (\textit{Data Flywheel}):} El incremento del tiempo de escucha se traduce en una captura masiva y constante de datos sobre el comportamiento y las preferencias del oponente en tiempo real. Esto retroalimenta y perfecciona los algoritmos de recomendación tradicionales, creando un ciclo de mejora continua muy difícil de replicar por la competencia.
+        \item \textbf{Reposicionamiento de marca:} Reafirma la transición de Spotify de ser una mera plataforma distribuidora de contenido musical a consolidarse como una empresa tecnológica puntera e integradora de IA generativa comercial.
+    \end{itemize}
     
-    \item \textbf{Innovación en el Modelo de Servicio (Experiencia de Usuario):} Transforma el consumo históricamente pasivo de la música en una experiencia casi parasocial. El gran defecto de la recomendación algorítmica clásica era que resultaba ``silenciosa'' y carente de contexto humano. La incorporación de un ``DJ'' impulsado por IA que explica de viva voz \textit{por qué} se está reproduciendo un tema proporciona un contexto cultural indispensable.
+    \item \textbf{Riesgos y Desafíos:}
+    \begin{itemize}
+        \item \textbf{Costes operacionales elevados:} Desplegar la inferencia de LLMs y la síntesis de voz dinámica en tiempo real para cientos de millones de usuarios requiere una infraestructura en la nube colosal, incurriendo en costes de computación y servidores extremadamente altos.
+        \item \textbf{Dependencia estratégica de terceros:} Al basar su arquitectura generativa en los modelos de OpenAI, Spotify asume un riesgo de dependencia tecnológica. Cualquier cambio en las tarifas de las API, modificaciones en las políticas de uso o caídas del servicio de OpenAI impacta directamente en la disponibilidad y viabilidad de su propio producto.
+        \item \textbf{Riesgo reputacional e incertidumbre algorítmica:} Existe el riesgo latente de ``alucinaciones'', donde el sistema proporcione datos falsos, erróneos o culturalmente insensibles sobre un artista o género musical, afectando la credibilidad y la reputación editorial de la plataforma.
+        \item \textbf{Incertidumbre legal y de propiedad intelectual:} La clonación de voz y el uso de IA generativa operan en un marco regulatorio global en constante evolución. Spotify se expone a futuros desafíos legales y disputas de derechos de autor respecto a la propiedad intelectual de los textos generados y los derechos de explotación de las voces sintéticas.
+    \end{itemize}
 \end{itemize}
 
-En definitiva, la naturaleza de esta innovación radica en cerrar la brecha histórica existente entre la minuciosa curación humana (propia de la radio tradicional) y la fría pero eficiente personalización automatizada de la era digital, logrando escalar una experiencia de locutor de radio "1-a-1" a millones de usuarios de forma simultánea.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{TI-3.png}
+    \caption{El ciclo de retroalimentación de datos (\textit{Data Flywheel}), base de la ventaja competitiva de Spotify.}
+    \label{fig:data_flywheel}
+\end{figure}
 
 \section{Impacto de la innovación en el usuario o en la sociedad}
-
 La introducción de un guía musical guiado por Inteligencia Artificial de forma masiva no solo transforma los hábitos de consumo, sino que también genera implicaciones éticas, sociales y psicológicas profundas:
 
 \begin{itemize}
@@ -134,7 +161,7 @@ Advances in Neural Information Processing Systems (NeurIPS), 2022.
 
 \bibitem{filterbubble}
 Pariser, E.
-\textit{The Filter Bubble: What the Internet Is Hiding from You}.
+\textit{The Filter Bubble: What direct What the Internet Is Hiding from You}.
 Penguin Press, 2011.
 (Obra clave que acuñó el término ``cámara de eco'' y analiza los riesgos sociológicos de la hiper-personalización algorítmica).
 
