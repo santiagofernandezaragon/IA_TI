@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Descripción del producto o servicio y de la innovación}{3}{section.1}%
+\contentsline {section}{\numberline {2}Descripción general de las técnicas de IA utilizadas}{3}{section.2}%
+\contentsline {section}{\numberline {3}Descripción de cómo han sido utilizadas/adaptadas las técnicas para la innovación}{4}{section.3}%
+\contentsline {section}{\numberline {4}Por qué es un producto/servicio innovador y la naturaleza de la innovación}{4}{section.4}%
+\contentsline {section}{\numberline {5}Por qué es un producto/servicio innovador y la naturaleza de la innovación}{5}{section.5}%
+\contentsline {section}{\numberline {6}Impacto de la innovación en el usuario o en la sociedad}{5}{section.6}%
+\contentsline {section}{\numberline {7}Bibliografía}{6}{section.7}%
