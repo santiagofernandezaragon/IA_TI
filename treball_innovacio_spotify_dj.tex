@@ -36,6 +36,8 @@ La innovación concreta en la que se centra este trabajo es la \textbf{integraci
 
 Es fundamental destacar de acuerdo con los paradigmas de desarrollo tecnológico que la naturaleza de esta funcionalidad constituye un \textbf{uso innovador de técnicas y métodos de IA ya existentes}. La disrupción de Spotify DJ no radica en la invención de un nuevo algoritmo subyacente, sino en la convergencia orquestada de estos tres pilares. Resolver el tremendo reto de ingeniería y latencia que supone generar un guion personalizado con un LLM y procesarlo mediante \textit{Text-to-Speech} (TTS) en escasos milisegundos, garantizando una transición fluida y sin pausas perceptibles entre canciones, constituye el núcleo técnico de su propuesta de valor. Esta convergencia permite crear una experiencia de escucha continua, guiada y fuertemente narrativa, algo inédito en las plataformas de streaming musical modernas.
 
+\newpage
+
 \section{Descripción general de las técnicas de IA utilizadas}
 Para lograr esta innovación, Spotify ha orquestado una combinación de tres técnicas principales dentro del campo de la Inteligencia Artificial:
 
@@ -54,6 +56,8 @@ Para lograr esta innovación, Spotify ha orquestado una combinación de tres té
     \label{fig:collab_filtering}
 \end{figure}
 
+\newpage
+
 \section{Descripción de cómo han sido utilizadas/adaptadas las técnicas para la innovación}
 La innovación de Spotify DJ reside en el cauce (\textit{pipeline}) que conecta y adapta estas tecnologías para que actúen en tiempo real de forma interdependiente.
 
@@ -62,6 +66,8 @@ En primer lugar, el sistema de recomendación no genera una lista estática, sin
 Una vez definidos los bloques, entran en juego los LLMs. La adaptación de estos modelos no se limita a una generación libre de texto, sino que sigue una arquitectura inspirada en los sistemas de generación aumentada por recuperación (\textit{Retrieval-Augmented Generation} o RAG). El sistema inyecta datos curados dinámicamente por los equipos editoriales (expertos musicales humanos que documentan anécdotas o datos relevantes sobre artistas) y los cruza con el historial específico de escucha del usuario. El LLM es adaptado mediante \textit{prompt engineering} sistemático y \textit{fine-tuning} para redactar, en milisegundos, un guion corto que introduce el bloque musical. Esta inyección estricta de contexto actúa como un filtro que reduce drásticamente el riesgo de invención de datos falsos (\textit{alucinaciones}) por parte del modelo.
 
 Finalmente, este guion de texto es enviado al motor de síntesis de voz (Sonantic). La IA de voz —entrenada con miles de horas de grabaciones del directivo de Spotify Xavier ``X'' Jernigan— recibe el texto y parametriza el audio para generar un corte de voz realista. Todo el proceso ocurre de manera asíncrona pero sin interrupciones perceptibles por el usuario, integrando de forma fluida el audio hablado entre las canciones.
+
+\newpage
 
 \section{Por qué es un producto/servicio innovador y la naturaleza de la innovación}
 La naturaleza de esta funcionalidad constituye, desde el punto de vista tecnológico y de mercado, un \textbf{uso innovador de técnicas y métodos de IA ya existentes}. Como se ha detallado anteriormente, las IA generativas (LLMs), los motores de síntesis de voz (TTS) y los sistemas de recomendación ya existían y operaban de manera aislada; lo verdaderamente innovador es su orquestación conjunta.
@@ -75,6 +81,8 @@ El carácter innovador de Spotify DJ se puede dividir en dos vertientes principa
 \end{itemize}
 
 En definitiva, la naturaleza de esta innovación radica en cerrar la brecha histórica existente entre la minuciosa curación humana (propia de la radio tradicional) y la fría pero eficiente personalización automatizada de la era digital, logrando escalar una experiencia de locutor de radio "1-a-1" a millones de usuarios de forma simultánea.
+
+\newpage
 
 \section{Impacto de la innovación en la empresa}
 El despliegue de Spotify DJ genera una serie de efectos estratégicos para la compañía, equilibrando oportunidades de crecimiento masivo con desafíos operativos y regulatorios considerables:
@@ -103,6 +111,8 @@ El despliegue de Spotify DJ genera una serie de efectos estratégicos para la co
     \label{fig:data_flywheel}
 \end{figure}
 
+\newpage
+
 \section{Impacto de la innovación en el usuario o en la sociedad}
 La introducción de un guía musical guiado por Inteligencia Artificial de forma masiva no solo transforma los hábitos de consumo, sino que también genera implicaciones éticas, sociales y psicológicas profundas:
 
@@ -119,10 +129,13 @@ La introducción de un guía musical guiado por Inteligencia Artificial de forma
         \item \textbf{Desplazamiento laboral y automatización:} Despierta intensos debates sobre el reemplazo laboral (\textit{displacement}), al automatizar las habilidades comunicativas, la investigación y la curación musical que históricamente realizaban locutores de radio, presentadores y críticos humanos.
         \item \textbf{Refuerzo de las cámaras de eco (\textit{Filter Bubble}):} El sistema puede llegar a retroalimentar indefinidamente los propios sesgos musicales del usuario. Al priorizar la retención mediante lo conocido, se limita el descubrimiento de contenido verdaderamente orgánico, azaroso o fuera de la zona de confort del oyente.
         \item \textbf{Homogeneización cultural:} Al depender de algoritmos masivos entrenados principalmente con datos globales, existe el riesgo de marginar a artistas emergentes, independientes o de nichos culturales locales, concentrando la atención y los ingresos en las corrientes más comerciales (\textit{mainstream}).
-        \item \textbf{Dilemas de privacidad y vigilancia:} Moldear la hiper-personalización y la supuesta ``familiaridad'' del DJ requiere un examen profundo, íntimo y constante de los datos privados del oyente, planteando dudas sobre los límites éticos de la recolección de hábitos personales.
+        \item \textbf{Dilemas de privacidad y vigilancia:} Hacer la personalización tan bien hecha del DJ respecto el oyente y la supuesta ``familiaridad'' del DJ requiere un examen profundo, íntimo y constante de los datos privados del oyente, planteando dudas sobre los límites éticos de la recolección de hábitos personales.
         \item \textbf{Impacto psicológico y relaciones parasociales:} La creación de una sensación artificial de compañía mediante una voz fotorrealista plantea un debate ético importante. Esta tecnología puede ser utilizada para prolongar de forma desmedida el tiempo de uso de la aplicación, explotando la necesidad psicológica de conexión del usuario con fines meramente comerciales.
     \end{itemize}
 \end{itemize}
+
+\newpage
+
 
 \section{Bibliografía}
 \begin{thebibliography}{9}
